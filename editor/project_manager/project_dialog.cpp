@@ -819,12 +819,6 @@ ProjectDialog::ProjectDialog() {
 	l->set_h_size_flags(Control::SIZE_EXPAND_FILL);
 	pphb_label->add_child(l);
 
-	create_dir = memnew(CheckButton);
-	create_dir->set_text(TTR("Create Folder"));
-	create_dir->set_pressed(true);
-	pphb_label->add_child(create_dir);
-	create_dir->connect("toggled", callable_mp(this, &ProjectDialog::_create_dir_toggled));
-
 	HBoxContainer *pphb = memnew(HBoxContainer);
 	project_path_container->add_child(pphb);
 
@@ -832,6 +826,11 @@ ProjectDialog::ProjectDialog() {
 	project_path->set_h_size_flags(Control::SIZE_EXPAND_FILL);
 	project_path->set_structured_text_bidi_override(TextServer::STRUCTURED_TEXT_FILE);
 	pphb->add_child(project_path);
+
+	created_at_lable = memnew(Lable);
+	created_at_lable->set_text(TTR("Project will be created at: "));
+	created_at_lable->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	project_path_container->add_child(created_at_lable);
 
 	install_path_container = memnew(VBoxContainer);
 	vb->add_child(install_path_container);

@@ -66,7 +66,6 @@ private:
 	Mode mode = MODE_NEW;
 	bool is_folder_empty = true;
 
-	CheckButton *create_dir = nullptr;
 	Button *project_browse = nullptr;
 	Button *install_browse = nullptr;
 	VBoxContainer *name_container = nullptr;
@@ -82,6 +81,7 @@ private:
 	LineEdit *project_name = nullptr;
 	LineEdit *project_path = nullptr;
 	LineEdit *install_path = nullptr;
+	Label *created_at_lable = nullptr;
 	TextureRect *project_status_rect = nullptr;
 	TextureRect *install_status_rect = nullptr;
 
